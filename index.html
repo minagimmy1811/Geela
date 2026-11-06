@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#ffe3ea">
+<title>For Geela 💌</title>
+<meta name="description" content="A top-secret, fully insured, risk-assessed message. For Geela's eyes only.">
+<meta property="og:title" content="For Geela 💌">
+<meta property="og:description" content="A top-secret, fully insured, risk-assessed message. For Geela's eyes only.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff3f5; --bg2:#ffe3ea; --ink:#3a1f2b; --muted:#7d5666;
+  --rose:#e8456b; --rose-d:#c22a50; --gold:#e9b44c; --card:#ffffff;
+  --line:#f3c7d3; --shadow:0 12px 40px -12px rgba(194,42,80,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#1d0f16; --bg2:#2a1420; --ink:#ffe9ef; --muted:#d3a6b6; --card:#2f1825; --line:#5a2c40; --shadow:0 12px 40px -12px rgba(0,0,0,.6);}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);line-height:1.6;overflow-x:hidden;min-height:100vh}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.hand{font-family:'Caveat',cursive}
+/* floating hearts */
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.fh{position:absolute;bottom:-40px;opacity:.0;animation:rise linear forwards}
+@keyframes rise{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.55}100%{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+main,header,footer{position:relative;z-index:1}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;text-align:center;padding:40px 0}
+.stamp{display:inline-block;border:3px solid var(--rose);color:var(--rose);padding:6px 14px;border-radius:6px;font-weight:700;letter-spacing:.18em;font-size:.8rem;transform:rotate(-4deg);margin-bottom:22px;text-transform:uppercase}
+.hero h1{font-size:clamp(2.6rem,10vw,5rem);font-weight:800}
+.hero h1 em{color:var(--rose);font-style:italic}
+.type{font-size:clamp(1.1rem,3.6vw,1.4rem);color:var(--muted);min-height:3.4em;margin:18px auto 28px;max-width:34ch}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--rose);color:#fff;font:700 1rem 'DM Sans',sans-serif;padding:14px 28px;border-radius:999px;box-shadow:var(--shadow);transition:transform .15s,background .15s;text-decoration:none}
+.btn:hover{transform:translateY(-2px) scale(1.03);background:var(--rose-d)}
+.btn.ghost{background:transparent;color:var(--rose);border:2px solid var(--rose);box-shadow:none}
+.scroll-hint{display:block;margin-top:34px;color:var(--muted);animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.kicker{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;color:var(--rose);margin-bottom:8px}
+h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
+.lead{color:var(--muted);margin-bottom:24px}
+/* report */
+.rows{display:grid;gap:12px}
+.row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border:0}
+.row b{font-family:'Fraunces',serif;color:var(--rose);font-size:1.15rem;text-align:right}
+.bar{height:8px;border-radius:99px;background:var(--line);margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--rose));border-radius:99px;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.note{font-size:.8rem;color:var(--muted);margin-top:14px;font-style:italic}
+/* reasons */
+.reasons{display:grid;gap:14px}
+.reason{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;opacity:0;transform:translateY(18px);transition:.6s}
+.reason.in{opacity:1;transform:none}
+.reason span.e{font-size:1.6rem}
+/* policy */
+.policy{border:2px dashed var(--rose);background:var(--card);border-radius:14px;padding:26px;position:relative}
+.policy h3{margin-bottom:10px}
+.policy ol{padding-left:20px;color:var(--muted)}
+.policy li{margin:8px 0}
+.policy .sig{margin-top:18px;font-size:1.7rem;color:var(--rose)}
+/* suspects */
+.suspects{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.sus{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s}
+.sus:hover{transform:rotate(-2deg) scale(1.04)}
+.sus .e{font-size:2.2rem;display:block}
+.sus small{display:block;color:var(--muted);margin-top:4px}
+#verdict{margin-top:16px;font-weight:700;color:var(--rose);min-height:1.6em}
+/* ask */
+.ask{text-align:center}
+.q{font-size:clamp(1.6rem,6vw,2.4rem);margin-bottom:24px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;min-height:110px}
+#no{position:relative}
+.reply{margin-top:22px;font-size:1.15rem;color:var(--ink);min-height:3em}
+/* finale */
+.final{text-align:center;padding-bottom:110px}
+.final .big{font-size:clamp(2rem,8vw,3.4rem);font-weight:800;margin-bottom:14px}
+.final .big em{color:var(--rose)}
+.fine{font-size:.78rem;color:var(--muted);max-width:52ch;margin:26px auto 0}
+.reveal-wrap{margin-top:28px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:12px;z-index:50;transition:transform .35s;max-width:90vw;text-align:center;font-size:.95rem}
+.toast.show{transform:translate(-50%,0)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.reason{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="hearts" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="stamp">Confidential • Fully Insured • Sender: [REDACTED]</span>
+    <h1>Hey <em>Geela</em>,<br>this page is about you.</h1>
+    <p class="type hand" id="type" aria-live="polite"></p>
+    <a href="#report" class="btn">Open it carefully 💌</a>
+    <span class="scroll-hint" aria-hidden="true">↓</span>
+  </div>
+</header>
+
+<main>
+<section id="report">
+  <div class="wrap">
+    <div class="card">
+      <div class="kicker">Official Document No. G-001</div>
+      <h2>Risk Assessment Report</h2>
+      <p class="lead">Prepared by an anonymous analyst who is absolutely not qualified to price this much feelings. Subject of study: one Angela "Geela".</p>
+      <div class="rows" id="rows">
+        <div class="row"><div>Probability of smiling when you're around<div class="bar"><i data-w="100"></i></div></div><b>100%</b></div>
+        <div class="row"><div>Chance the day gets better after talking to you<div class="bar"><i data-w="99"></i></div></div><b>99.9%</b></div>
+        <div class="row"><div>Times I've pretended to be normal about it<div class="bar"><i data-w="12"></i></div></div><b>p &lt; 0.05</b></div>
+        <div class="row"><div>Strength of the "feeling different when you're near" effect<div class="bar"><i data-w="96"></i></div></div><b>Very high</b></div>
+        <div class="row"><div>Standard deviation of my heart rate around you<div class="bar"><i data-w="88"></i></div></div><b>Unacceptable</b></div>
+      </div>
+      <p class="note">* Methodology: vibes, mostly. Peer review pending. Underwriter is blushing.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Exhibit A</div>
+    <h2>Things I've (quietly) noticed</h2>
+    <p class="lead">Not a complete list. The complete list would crash the server.</p>
+    <div class="reasons">
+      <div class="reason"><span class="e">🎓</span><div><b>You're smart in a way that's a little unfair.</b> Actuarial science?! You literally calculate the future for fun. Meanwhile I can't predict my own reaction when you walk in.</div></div>
+      <div class="reason"><span class="e">✨</span><div><b>The room changes when you arrive.</b> Same room, same people, but somehow the lighting gets an upgrade.</div></div>
+      <div class="reason"><span class="e">😂</span><div><b>Your laugh should be regulated.</b> It's a known cause of my good moods and I've lost all ability to stay serious.</div></div>
+      <div class="reason"><span class="e">🫶</span><div><b>You're kind without trying.</b> That's the rarest thing. I've checked. There's no table for it.</div></div>
+      <div class="reason"><span class="e">🌍</span><div><b>You make ordinary days feel like a plot.</b> And I'd like to keep reading it.</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="policy">
+      <div class="kicker">Coverage Document</div>
+      <h3>Policy: "The Geela Heart Plan"</h3>
+      <ol>
+        <li><b>Insured:</b> one slightly dizzy heart (the sender's).</li>
+        <li><b>Covered events:</b> your smile, your laugh, and that way you say things that makes everything funnier.</li>
+        <li><b>Not covered:</b> acting cool. We tried. It lapsed.</li>
+        <li><b>Premium:</b> one reply at your own pace, or zero. Honestly, zero is fine.</li>
+        <li><b>Cancellation:</b> you can tear this up anytime, no fee, no hard feelings.</li>
+      </ol>
+      <p class="sig hand">Signed, a Very Confused Policyholder 🖊️</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Investigation</div>
+    <h2>Who sent this?</h2>
+    <p class="lead">Take your best guess. Click a suspect. (Spoiler: nobody here will confess.)</p>
+    <div class="suspects" id="suspects">
+      <div class="sus" data-v="The printer has an airtight alibi. It was jammed.">
+        <span class="e">🖨️</span><b>The office printer</b><small>motive: unclear</small></div>
+      <div class="sus" data-v="Cleared. He's too busy being a pigeon.">
+        <span class="e">🐦</span><b>A suspicious pigeon</b><small>seen near the scene</small></div>
+      <div class="sus" data-v="Impossible. Excel can't even express this much feeling.">
+        <span class="e">📊</span><b>An Excel sheet</b><small>has all your data</small></div>
+      <div class="sus" data-v="Wrong again. Closer than you think though 👀 (jk, keep guessing)">
+        <span class="e">🕵️</span><b>Mystery person</b><small>wears a very good disguise</small></div>
+      <div class="sus" data-v="The Nile is innocent. It simply flows. Poetic though.">
+        <span class="e">🌊</span><b>The Nile</b><small>been there forever</small></div>
+      <div class="sus" data-v="Cupid denies everything and asked for a lawyer.">
+        <span class="e">🏹</span><b>Cupid</b><small>lawyered up</small></div>
+    </div>
+    <div id="verdict" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="ask">
+  <div class="wrap">
+    <div class="card">
+      <h2 class="q">So… was this a nice surprise?</h2>
+      <div class="btns" id="btns">
+        <button class="btn" id="yes">Yes 🥹</button>
+        <button class="btn ghost" id="no">No</button>
+      </div>
+      <p class="reply" id="reply"></p>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <p class="big hand">Geela, you are <em>so</em> loved.</p>
+    <h2>That's it. That's the whole confession.</h2>
+    <p class="lead">No pressure, no expectations, and no need to reply or figure anything out. I just didn't want to keep it inside any longer. You deserve to know how wonderful you are, and how much happier someone is just because you exist.</p>
+    <p class="lead"><b>Whatever you feel about this, it's perfectly okay.</b> Laugh, screenshot it, roast it, close the tab. Everything stays exactly as comfortable as before.</p>
+    <div class="reveal-wrap">
+      <button class="btn ghost" id="reveal">Reveal the sender 🎭</button>
+    </div>
+    <p class="fine">Disclaimer: this page was created by someone who values you deeply and your friendship even more. No actuaries were harmed. All feelings are real; all statistics are made up.</p>
+  </div>
+</section>
+</main>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  /* floating hearts */
+  var hearts=document.getElementById('hearts'), em=['💖','💗','💕','🌹','✨','💘'];
+  function spawn(){
+    var s=document.createElement('span');s.className='fh';
+    s.textContent=em[Math.floor(Math.random()*em.length)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.fontSize=(14+Math.random()*22)+'px';
+    var d=7+Math.random()*7;s.style.animationDuration=d+'s';
+    hearts.appendChild(s);setTimeout(function(){s.remove()},d*1000);
+  }
+  setInterval(spawn,700);for(var i=0;i<6;i++)setTimeout(spawn,i*250);
+
+  /* typewriter */
+  var lines=["Someone out there thinks you're pretty wonderful.","I'm not telling you who. That's the fun part. 🤫","Scroll slowly. There's math, jokes, and feelings."];
+  var el=document.getElementById('type'),li=0,ci=0,del=false;
+  function tick(){
+    var t=lines[li];
+    el.textContent=t.slice(0,ci);
+    if(!del&&ci<t.length){ci++;return setTimeout(tick,45)}
+    if(!del){del=true;return setTimeout(tick,1700)}
+    if(ci>0){ci--;return setTimeout(tick,18)}
+    del=false;li=(li+1)%lines.length;setTimeout(tick,300);
+  }
+  tick();
+
+  /* scroll reveal */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll&&e.target.querySelectorAll('.bar i').forEach(function(b){b.style.width=b.dataset.w+'%'});
+    io.unobserve(e.target);
+  })},{threshold:.25});
+  document.querySelectorAll('.reason').forEach(function(r,i){r.style.transitionDelay=(i*90)+'ms';io.observe(r)});
+  io.observe(document.getElementById('rows'));
+
+  /* toast */
+  var toast=document.getElementById('toast'),tt;
+  function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},3200)}
+
+  /* suspects */
+  document.querySelectorAll('.sus').forEach(function(s){
+    s.addEventListener('click',function(){document.getElementById('verdict').textContent=s.dataset.v});
+  });
+
+  /* confetti of hearts */
+  function burst(){
+    for(var i=0;i<40;i++){
+      var s=document.createElement('span');
+      s.textContent=em[i%em.length];
+      s.style.cssText='position:fixed;z-index:60;pointer-events:none;left:50%;top:60%;font-size:'+(18+Math.random()*20)+'px;transition:all 1.6s cubic-bezier(.1,.7,.3,1);opacity:1';
+      document.body.appendChild(s);
+      (function(s){requestAnimationFrame(function(){
+        s.style.transform='translate('+((Math.random()-.5)*window.innerWidth)+'px,'+(-Math.random()*window.innerHeight*.8)+'px) rotate('+(Math.random()*360)+'deg)';
+        s.style.opacity='0';
+      });setTimeout(function(){s.remove()},1700)})(s);
+    }
+  }
+
+  /* yes / runaway no */
+  var reply=document.getElementById('reply'),no=document.getElementById('no'),btns=document.getElementById('btns'),dodges=0;
+  document.getElementById('yes').addEventListener('click',function(){
+    burst();reply.textContent="Knew it. 🥹 (Said the anonymous sender, grinning at a screen somewhere.)";
+  });
+  var nope=["Nice try.","The 'No' button is on a coffee break.","Error 404: 'No' not found.","Statistically, that button is unreliable.","Okay fine, it's shy."];
+  function flee(e){
+    e.preventDefault();
+    var r=btns.getBoundingClientRect(), w=no.offsetWidth, h=no.offsetHeight;
+    var x=Math.random()*(r.width-w), y=Math.random()*(r.height-h);
+    no.style.position='absolute';no.style.left=x+'px';no.style.top=y+'px';
+    reply.textContent=nope[Math.min(dodges++,nope.length-1)];
+  }
+  no.addEventListener('mouseenter',flee);no.addEventListener('touchstart',flee,{passive:false});no.addEventListener('click',flee);
+
+  /* reveal gag */
+  var rv=0,rmsgs=["Sender identity: loading… 3%","Error: identity is classified at the highest clearance.","The sender has fled to a country with no Wi-Fi.","Plot twist: it was YOU who typed this. Think about it.","Request denied. Please try again never. 😌"];
+  document.getElementById('reveal').addEventListener('click',function(){say(rmsgs[rv%rmsgs.length]);rv++});
+})();
+</script>
+</body>
+</html>
