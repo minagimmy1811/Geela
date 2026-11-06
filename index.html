@@ -75,6 +75,11 @@ h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
 .sus:hover{transform:rotate(-2deg) scale(1.04)}
 .sus .e{font-size:2.2rem;display:block}
 .sus small{display:block;color:var(--muted);margin-top:4px}
+.casefile{margin-top:20px;background:var(--card);border:2px dashed var(--rose);border-radius:16px;padding:20px 22px}
+.casefile ul{list-style:none;margin:10px 0}
+.casefile li{padding:8px 0;border-bottom:1px dashed var(--line)}
+.casefile li:last-child{border:0}
+.casefile .status{font-weight:700;color:var(--rose);margin-top:6px}
 #verdict{margin-top:16px;font-weight:700;color:var(--rose);min-height:1.6em}
 /* calm letter */
 .letter{background:linear-gradient(180deg,var(--card),var(--bg));border-color:var(--rose)}
@@ -178,6 +183,15 @@ h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
         <span class="e">🌊</span><b>The Nile</b><small>been there forever</small></div>
       <div class="sus" data-v="Cupid denies everything and asked for a lawyer.">
         <span class="e">🏹</span><b>Cupid</b><small>lawyered up</small></div>
+    </div>
+    <div class="casefile">
+      <div class="kicker">🗂️ Case File • Suspect #7 • Name withheld</div>
+      <ul>
+        <li>⛪ Attends the <b>same church</b> as the subject. Suspiciously close to the scene.</li>
+        <li>🍽️ Last seen in the area of a place called <b>Bistro</b>. Refuses to comment.</li>
+        <li>😏 Has been officially labeled <b dir="rtl" lang="ar">"رخم"</b> by the subject on multiple occasions. Has not appealed.</li>
+      </ul>
+      <p class="status">Status: probably innocent. Probably. 👀</p>
     </div>
     <div id="verdict" aria-live="polite"></div>
   </div>
