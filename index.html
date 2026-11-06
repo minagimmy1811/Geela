@@ -91,6 +91,15 @@ h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
 .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
 .reply{margin-top:22px;font-size:1.15rem;color:var(--ink);min-height:3em}
 /* finale */
+.back{margin-top:26px;padding-top:22px;border-top:1px dashed var(--line);text-align:left;display:grid;gap:12px}
+.back label{font-weight:700}
+.back label small{font-weight:400;color:var(--muted)}
+.back textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;resize:vertical}
+.back textarea:focus{outline:2px solid var(--rose);border-color:var(--rose)}
+.back .btn{justify-self:start}
+.back .btn[disabled]{opacity:.6;cursor:default;transform:none}
+.notice{font-size:.8rem;color:var(--muted)}
+.sent{font-weight:700;color:var(--rose);min-height:1.4em}
 .final{text-align:center;padding-bottom:110px}
 .final .big{font-size:clamp(2rem,8vw,3.4rem);font-weight:800;margin-bottom:14px}
 .final .big em{color:var(--rose)}
@@ -220,6 +229,14 @@ h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
         <button class="btn ghost" id="no">Let's stay friends 🫶</button>
       </div>
       <p class="reply" id="reply"></p>
+      <form class="back" id="back" autocomplete="off">
+        <label for="msg">Want to say something back? <small>(totally optional)</small></label>
+        <textarea id="msg" maxlength="1500" rows="4" placeholder="Write anything you like… or nothing at all 🤍"></textarea>
+        <input type="checkbox" id="bot" tabindex="-1" autocomplete="off" style="display:none">
+        <button class="btn" type="submit" id="send">Send it back 💌</button>
+        <p class="notice">🔒 Nothing is sent unless you press <b>Send</b>. If you do, your message goes privately to the person who made this page, and nowhere else.</p>
+        <p class="sent" id="sent" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </section>
@@ -310,6 +327,22 @@ h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
   });
   no.addEventListener('click',function(){
     reply.textContent="Totally okay, and thank you for being honest. Our friendship stays exactly as it is. 🫶";
+  });
+
+  /* optional reply: sent only when she presses Send */
+  var KEY='PASTE_WEB3FORMS_KEY_HERE';
+  document.getElementById('back').addEventListener('submit',function(e){
+    e.preventDefault();
+    var m=document.getElementById('msg').value.trim(),out=document.getElementById('sent'),btn=document.getElementById('send');
+    if(document.getElementById('bot').checked)return;
+    if(!m){out.textContent="Write something first, or just skip it. 🤍";return}
+    btn.disabled=true;out.textContent="Sending…";
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({access_key:KEY,subject:'A reply from Geela 💌',from_name:'Geela',message:m})})
+    .then(function(r){return r.json()}).then(function(d){
+      if(d.success){out.textContent="Sent 💌 Thank you for reading it.";document.getElementById('msg').value='';}
+      else throw 0;
+    }).catch(function(){btn.disabled=false;out.textContent="Hmm, that didn't send. Try again in a moment.";});
   });
 
   /* reveal gag */
