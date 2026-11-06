@@ -83,8 +83,7 @@ h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
 /* ask */
 .ask{text-align:center}
 .q{font-size:clamp(1.6rem,6vw,2.4rem);margin-bottom:24px}
-.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;min-height:110px}
-#no{position:relative}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
 .reply{margin-top:22px;font-size:1.15rem;color:var(--ink);min-height:3em}
 /* finale */
 .final{text-align:center;padding-bottom:110px}
@@ -201,10 +200,12 @@ h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
 <section class="ask">
   <div class="wrap">
     <div class="card">
-      <h2 class="q">So… was this a nice surprise?</h2>
+      <h2 class="q">Geela, I have real feelings for you. 💗</h2>
+      <p class="lead">Not a joke, not a prank. Just the truth, said as gently as I can. So… how does that land?</p>
       <div class="btns" id="btns">
-        <button class="btn" id="yes">Yes 🥹</button>
-        <button class="btn ghost" id="no">No</button>
+        <button class="btn" id="yes">I'm touched 🥹</button>
+        <button class="btn ghost" id="time">I need time 🤍</button>
+        <button class="btn ghost" id="no">Let's stay friends 🫶</button>
       </div>
       <p class="reply" id="reply"></p>
     </div>
@@ -290,17 +291,14 @@ h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
   /* yes / runaway no */
   var reply=document.getElementById('reply'),no=document.getElementById('no'),btns=document.getElementById('btns'),dodges=0;
   document.getElementById('yes').addEventListener('click',function(){
-    burst();reply.textContent="Knew it. 🥹 (Said the anonymous sender, grinning at a screen somewhere.)";
+    burst();reply.textContent="That means more than you know. 🥹 No rush, no pressure. Take it at your pace.";
   });
-  var nope=["Nice try.","The 'No' button is on a coffee break.","Error 404: 'No' not found.","Statistically, that button is unreliable.","Okay fine, it's shy."];
-  function flee(e){
-    e.preventDefault();
-    var r=btns.getBoundingClientRect(), w=no.offsetWidth, h=no.offsetHeight;
-    var x=Math.random()*(r.width-w), y=Math.random()*(r.height-h);
-    no.style.position='absolute';no.style.left=x+'px';no.style.top=y+'px';
-    reply.textContent=nope[Math.min(dodges++,nope.length-1)];
-  }
-  no.addEventListener('mouseenter',flee);no.addEventListener('touchstart',flee,{passive:false});no.addEventListener('click',flee);
+  document.getElementById('time').addEventListener('click',function(){
+    reply.textContent="Of course. Take all the time you need. I'm not going anywhere. 🤍";
+  });
+  no.addEventListener('click',function(){
+    reply.textContent="Totally okay, and thank you for being honest. Our friendship stays exactly as it is. 🫶";
+  });
 
   /* reveal gag */
   var rv=0,rmsgs=["Sender identity: loading… 3%","Error: identity is classified at the highest clearance.","The sender has fled to a country with no Wi-Fi.","Plot twist: it was YOU who typed this. Think about it.","Request denied. Please try again never. 😌"];
